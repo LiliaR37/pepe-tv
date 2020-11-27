@@ -1,0 +1,170 @@
+@import 'variables';
+@import 'mixins';
+
+
+html {
+    @include box-sizing(border-box);
+}
+*,
+*:after,
+*:before{
+    @include box-sizing(inherit);
+}
+
+body {
+    background-color: $negro;
+    color: $blanco;
+    font-family: $fuentePrincipal;
+    h2 {
+        color:$blanco;
+        margin-top: .5rem;
+        font-size: 2rem;
+        @include tablet {
+           margin-left: 2rem;
+        }
+
+        }
+    @include tablet {
+        background-color: unset;
+       background-image: url(../img/pexels-moose-photos-1037993.jpg);
+       background-position: top center;
+       background-repeat: no-repeat;
+       background-size: cover;
+
+       
+       
+    }
+    
+
+}
+
+.contenedor {
+    width: 90%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color:$primario;
+}
+.formulario-login {
+    @include tablet {
+        background-color: $negro;
+        max-width: 420px;
+        padding: 2rem 6rem;
+        margin: 1rem auto 4rem auto;
+    }
+
+}
+
+form {
+    legend {
+        font-size: 3rem;
+        text-align: center;
+        padding: 2rem 4rem;
+        @include tablet {
+            
+            font-size: 2rem;
+            padding:1rem 1rem;
+        }
+    }
+
+    .campo {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: .8rem;
+
+        a {
+            margin-top: .8rem;
+        }
+
+        
+        input {
+           flex:1;
+             padding: 1rem .5rem .5em 1rem;
+             border-radius: $radius;
+             color:$gris2;
+             
+            
+
+        }
+
+       
+
+       
+
+    }
+    .submit {
+         display: flex;
+         margin-top: 2rem;
+         margin-bottom: 2rem;
+
+         input[type="submit"]  {
+            @include boton($primario);
+    
+            &:hover {
+                cursor: pointer;
+    
+            }
+        }  
+}
+    .text {
+        padding: 2rem 0 2rem 0;
+        border-top: 1px solid $gris2;
+        text-align: center;
+        font-weight: bold;
+        
+    }
+    .boton {
+       a {
+           color: $blanco;
+           font-weight: bold;
+           
+        
+       }
+        @include boton ($gris2);
+       
+        }
+}
+
+
+
+.site-footer {
+    margin-top: 2rem;
+    
+    
+    @include tablet {
+        border-top: unset;
+        background-color: rgba(0,0,0,0.85);
+        padding: 1rem 0 3rem 0;
+
+    }
+    .contenedor {
+        @include tablet {
+            max-width: 50%;
+            
+        }
+
+        .menu-footer {
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+           
+            a {
+                font-size: .8rem;
+                margin-right: 2rem;
+                padding: .5rem 0;
+    
+                &:last-of-type{
+                    margin-right: 0;
+                    
+                }
+            }
+        }
+        
+    }
+       
+    
+}
